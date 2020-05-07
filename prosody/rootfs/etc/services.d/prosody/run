@@ -1,0 +1,5 @@
+#!/usr/bin/with-contenv bash
+echo "$( dig +short myip.opendns.com @resolver1.opendns.com ) xmpp.meet.jitsi" >>! /etc/hosts
+
+exec s6-setuidgid prosody prosody --config /config/prosody.cfg.lua
+
